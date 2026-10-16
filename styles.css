@@ -202,6 +202,7 @@ a.contact-value { display: flex; align-items: center; justify-content: space-bet
   .hero-footnote { margin-top: 25px; }
   .hero-visual { width: calc(100% - 48px); height: min(440px, 110vw); min-height: 320px; margin: 0 24px 50px auto; }
   .hero-visual img { object-position: center 38%; }
+  .hero-visual { display: none; }
   .section-wrap { width: calc(100% - 40px); }
   .categories { padding-block: 80px 88px; }
   .section-heading, .collection-top, .gallery-heading { display: block; margin-bottom: 26px; }
