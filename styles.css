@@ -37,7 +37,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #417800; outline-offs
 .menu-toggle { display: none; }
 
 .hero { position: relative; min-height: min(690px, calc(100svh - 78px)); background: #82d700; display: grid; grid-template-columns: 1fr minmax(360px, .79fr); align-items: stretch; overflow: hidden; }
-.hero-copy { width: min(710px, 100%); justify-self: end; align-self: center; padding: 74px clamp(40px, 8vw, 128px) 92px max(32px, calc((100vw - var(--content))/2)); }
+.hero-copy { width: min(900px, 100%); justify-self: end; align-self: center; padding: 74px clamp(40px, 7vw, 128px) 92px clamp(32px, 5vw, 96px); }
 .eyebrow { margin: 0 0 20px; font-size: 10px; font-weight: 700; letter-spacing: .16em; line-height: 1.5; text-transform: uppercase; }
 .hero .eyebrow { display: flex; align-items: center; gap: 10px; }
 .eyebrow-dot { width: 7px; height: 7px; background: var(--ink); border-radius: 50%; }
