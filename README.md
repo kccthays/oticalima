@@ -4,7 +4,13 @@ Landing page estática para apresentar a marca e levar visitantes ao atendimento
 
 ## Executar localmente
 
-Abra `index.html` em um navegador ou sirva a pasta com qualquer servidor de arquivos estáticos. Não há etapa de build, instalação de dependências ou banco de dados.
+Abra `index.html` diretamente no navegador ou sirva esta pasta com qualquer servidor de arquivos estáticos. Por exemplo, com Python:
+
+```powershell
+python -m http.server 8000
+```
+
+Depois abra `http://localhost:8000`. Não há etapa de build, instalação de dependências ou banco de dados.
 
 ## Configuração pública
 
@@ -12,7 +18,11 @@ Edite `site-config.js` para atualizar o número de WhatsApp, o telefone exibido 
 
 ## Arquitetura
 
-A entrega é um site institucional estático. Não existe back-end, API, acesso a banco de dados, autenticação ou credencial privada, pois a página apenas apresenta conteúdo e abre uma conversa em serviço externo. Nenhuma operação que exija privilégios ou segredo acontece no navegador.
+A entrega é um site institucional estático em HTML, CSS e JavaScript. As ilustrações e dados reutilizáveis das armações ficam em `js/frame-data.js`; o personalizador 3D é criado em `js/frame-3d-viewer.js` com Three.js r159, mantido localmente em `js/vendor/three-r159.min.js`; o guia de formatos de rosto tem seu controlador em `js/face-guide.js`, com estilos em `styles-interactive.css`. A armação 3D é construída por código, responde às escolhas e pode ser girada com mouse ou toque. O desenho SVG continua como alternativa se WebGL não estiver disponível. As seleções existem apenas na página e não são armazenadas.
+
+O botão do personalizador monta uma conversa `wa.me` com as escolhas atuais usando o número público em `site-config.js`; ele abre o WhatsApp sem enviar a mensagem. As opções de lente e as recomendações são demonstrações de estilo, não especificações ou disponibilidade comercial.
+
+Não existe back-end, API, acesso a banco de dados, autenticação ou credencial privada. Nenhuma operação que exija privilégios ou segredo acontece no navegador.
 
 ## Imagens e informações
 

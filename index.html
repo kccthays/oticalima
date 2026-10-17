@@ -17,6 +17,10 @@
 
   <link rel="preload" as="image" href="assets/images/hero-principal.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-interactive.css">
+  <link rel="stylesheet" href="styles-experiment.css">
+  <link rel="stylesheet" href="styles-scroll-animations.css">
+  <link rel="stylesheet" href="styles-video-reference.css">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -33,6 +37,13 @@
   </script>
   <script src="site-config.js" defer></script>
   <script src="app.js" defer></script>
+  <script src="js/frame-data.js" defer></script>
+  <script src="js/frame-customizer.js" defer></script>
+  <script src="js/vendor/three-r159.min.js" defer></script>
+  <script src="js/frame-3d-viewer.js" defer></script>
+  <script src="js/face-guide.js" defer></script>
+  <script src="js/experimental-motion.js" defer></script>
+  <script src="js/scroll-animations.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -45,6 +56,8 @@
       <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
         <a href="#inicio">Início</a>
         <a href="#modelos">Modelos</a>
+        <a class="interactive-nav-link" href="#personalizador">Monte o seu</a>
+        <a class="interactive-nav-link" href="#guia-rosto">Guia de rosto</a>
         <a href="#sobre">Sobre</a>
         <a href="#contato">Contato</a>
         <a class="button button-dark nav-cta wa-link" data-message="Olá! Encontrei a Ótica Lima pelo site e gostaria de conhecer os modelos disponíveis." href="#contato">
@@ -120,6 +133,62 @@
         </article>
       </div>
       <p class="catalog-caption"><span class="catalog-dot"></span> As imagens são ilustrativas e não confirmam disponibilidade em estoque. Fale com a gente para consultar os modelos atuais.</p>
+    </section>
+
+    <section class="interactive-section customizer-section" id="personalizador" data-frame-customizer aria-labelledby="customizer-title">
+      <div class="section-wrap interactive-wrap">
+        <header class="interactive-heading">
+          <p class="eyebrow">Personalize seu estilo</p>
+          <h2 id="customizer-title">Monte o óculos<br><em>com a sua cara.</em></h2>
+          <p>Explore combinações de armação e lentes. A prévia é ilustrativa; confirme as opções disponíveis com a equipe.</p>
+        </header>
+        <div class="customizer-layout">
+          <div class="customizer-preview-column">
+            <div class="customizer-preview" aria-label="Prévia da combinação escolhida">
+              <span class="preview-index">PRÉVIA 01 / PERSONALIZAÇÃO</span>
+              <div class="preview-decoration" aria-hidden="true"></div>
+              <canvas class="preview-3d-canvas" data-frame-canvas aria-label="Demonstração conceitual em 3D de uma armação. Arraste para girar."></canvas>
+              <div class="preview-frame" data-frame-preview></div>
+              <span class="preview-hint" data-preview-hint>Demonstração 3D conceitual · arraste para girar</span>
+            </div>
+            <div class="configuration-summary" data-configuration-summary aria-live="polite" aria-label="Resumo da personalização"></div>
+            <button class="reset-customizer" type="button" data-reset-customizer>↺ <span>Reiniciar escolhas</span></button>
+          </div>
+          <div class="customizer-controls">
+            <fieldset class="customizer-step">
+              <legend><span>01</span> Formato da armação</legend>
+              <div class="shape-options" data-shape-options></div>
+            </fieldset>
+            <fieldset class="customizer-step">
+              <legend><span>02</span> Cor da armação</legend>
+              <div class="color-options" data-color-options></div>
+            </fieldset>
+            <fieldset class="customizer-step">
+              <legend><span>03</span> Tipo de lente</legend>
+              <div class="lens-options" data-lens-options></div>
+              <p class="option-disclaimer">Opções demonstrativas. Características e disponibilidade precisam ser confirmadas.</p>
+            </fieldset>
+            <fieldset class="customizer-step customizer-purpose-step">
+              <legend><span>04</span> Pra quê?</legend>
+              <div class="purpose-options" data-purpose-options aria-label="Escolha o uso principal"></div>
+            </fieldset>
+            <a class="button button-dark customizer-whatsapp" data-customizer-whatsapp href="#contato" target="_blank" rel="noopener noreferrer" hidden>Consultar pelo WhatsApp <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="interactive-section face-guide-section" id="guia-rosto" data-face-guide aria-labelledby="face-guide-title">
+      <div class="section-wrap interactive-wrap">
+        <header class="interactive-heading face-guide-heading">
+          <p class="eyebrow">Um guia para experimentar</p>
+          <h2 id="face-guide-title">Qual armação combina<br><em>com seu rosto?</em></h2>
+          <p>Escolha um formato para ver sugestões de armações e explorar diferentes estilos.</p>
+        </header>
+        <div class="face-options" data-face-options aria-label="Selecione um formato de rosto"></div>
+        <div class="recommendations" data-recommendations role="status" aria-live="polite"></div>
+        <p class="face-guide-note">As sugestões são orientações de estilo. Suas preferências e o conforto também importam.</p>
+      </div>
     </section>
 
     <section class="about" id="sobre" aria-labelledby="about-title">

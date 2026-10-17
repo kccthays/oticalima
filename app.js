@@ -52,19 +52,5 @@
     });
   });
 
-  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll(".section-heading, .category-card, .product-card, .about-copy, .gallery-tile, .contact-block").forEach((item) => {
-      item.classList.add("will-reveal");
-      revealObserver.observe(item);
-    });
-  }
 })();
 

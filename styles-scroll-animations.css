@@ -1,0 +1,57 @@
+/* Experimento de rolagem: usa apenas transform e opacity para manter o layout estável. */
+.hero-motion-ready .hero-visual {
+  opacity: 0;
+  animation: scroll-hero-image-in 850ms cubic-bezier(.2,.7,.2,1) 180ms forwards;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  filter: blur(3px);
+  transition:
+    opacity 680ms cubic-bezier(.2,.7,.2,1),
+    transform 680ms cubic-bezier(.2,.7,.2,1),
+    filter 680ms ease;
+  transition-delay: var(--scroll-delay, 0ms);
+}
+.scroll-reveal.is-visible,
+.scroll-reveal:focus-within {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+.scroll-parallax {
+  will-change: transform;
+}
+
+.button, .text-link, .product-cta, .category-link {
+  transition: transform 220ms cubic-bezier(.2,.7,.2,1), color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+}
+.button:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(24,26,22,.14); }
+.button:active { transform: translateY(-1px) scale(.985); box-shadow: none; }
+.text-link:hover, .product-cta:hover { transform: translateX(3px); }
+
+@keyframes scroll-hero-image-in {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@media (max-width: 900px) {
+  .scroll-reveal { filter: none; transform: translate3d(0, 14px, 0); }
+  .scroll-parallax { will-change: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-motion-ready .hero-visual,
+  .scroll-reveal,
+  .scroll-parallax,
+  .button, .text-link, .product-cta, .category-link {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+}

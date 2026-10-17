@@ -237,7 +237,9 @@ a.contact-value { display: flex; align-items: center; justify-content: space-bet
   .gallery-wide img { object-position: center 52%; }
   .contact-banner { min-height: 400px; }
   .contact-banner-inner { padding: 60px 22px; }
-  .contact-banner h2 { font-size: clamp(42px,10.5vw,57px); }
+  .contact-banner h2 { max-width: 16ch; margin-inline: auto; font-size: clamp(38px, 9.5vw, 48px); line-height: .98; text-wrap: balance; }
+  .contact-banner h2 br { display: none; }
+  .contact-banner h2 em::before { content: " "; }
   .contact-banner-inner > p:not(.eyebrow) { max-width: 320px; margin-inline: auto; }
   .banner-mark { right: -18px; font-size: 240px; }
   .contact { grid-template-columns: 1fr; gap: 44px; padding-block: 82px 85px; }
@@ -289,7 +291,7 @@ a.contact-value { display: flex; align-items: center; justify-content: space-bet
   .product-grid { gap: 22px 10px; }
   .product-info h3 { font-size: 10px; }
   .product-cta { font-size: 8px; }
-  .contact-banner h2 { font-size: 40px; }
+  .contact-banner h2 { font-size: 36px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
