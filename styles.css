@@ -237,9 +237,9 @@ a.contact-value { display: flex; align-items: center; justify-content: space-bet
   .gallery-wide img { object-position: center 52%; }
   .contact-banner { min-height: 400px; }
   .contact-banner-inner { padding: 60px 22px; }
-  .contact-banner h2 { max-width: 16ch; margin-inline: auto; font-size: clamp(38px, 9.5vw, 48px); line-height: 1.14; text-wrap: balance; }
+  .contact-banner h2 { width: 100%; max-width: none; margin-inline: auto; font-size: clamp(38px, 9.5vw, 48px); line-height: 1.14; text-align: center; text-wrap: balance; }
   .contact-banner h2 br { display: none; }
-  .contact-banner h2 em::before { content: " "; }
+  .contact-banner h2 em, .contact-banner h2 .banner-title-tail { display: block; }
   .contact-banner-inner > p:not(.eyebrow) { max-width: 320px; margin-inline: auto; }
   .banner-mark { right: -18px; font-size: 240px; }
   .contact { grid-template-columns: 1fr; gap: 44px; padding-block: 82px 85px; }
